@@ -1,7 +1,13 @@
 #====Telegram====
-bot_token = "8082709759:AAE_jG6WIq6XIkN5QLhDjdHpy8ZStYVrMLE"
-#====Spotify==== All lines in https://developer.spotify.com/dashboard/applications/
-client_id = "56914db4fc3d4d56aa5b8604812993c2"
-client_secret = "ab5d6636d25e4d1986098402a4cf07be"
-redirect_uri = "http://localhost:8888/callback" #Dont touch!!!
-spotiusername = "Kostyamops"
+bot_token = "" # Токен бота https://t.me/BotFather
+
+chat_id = "" # id канала, в котором планируется отображать статус
+message_id = "" # Номер редактируемого сообщения (не забудьте выдать боту права администратора в нужном канале)
+
+#====Spotify==== These 3 lines in https://developer.spotify.com/dashboard/applications/
+client_id = ""
+client_secret = ""
+spotify_username = ""
+
+redirect_uri = "http://localhost:8888/callback" # НЕ ИЗМЕНЯТЬ
+spotify_profile_link = "" # Ссылка на профиль спотифай, будет отображаться, когда у пользователя ничего не играет

@@ -8,6 +8,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from datetime import datetime
 
+from bot.config import message_id
 
 bot = telebot.TeleBot(config.bot_token, parse_mode='HTML')
 spotify = spotipy.Spotify(
@@ -16,7 +17,7 @@ spotify = spotipy.Spotify(
         client_id=config.client_id,
         client_secret=config.client_secret,
         redirect_uri=config.redirect_uri,
-        username=config.spotiusername,
+        username=config.spotify_username,
     )
 )
 
@@ -38,8 +39,9 @@ async def update_status(_current_playing):
 
             if _current_playing != [track, album, artist]:
                 music = "Сейчас играет: <b>" + artist + " - " + track + "</b>\n" + "<a href='" + link + "'><i>Спотифай</i></a>" + " (" + str(time_now) + ")"
-        chat_id = '-1001893715085'
-        bot.edit_message_text(chat_id=chat_id, message_id=421, text=music)
+        chat_id = config.chat_id
+        message_id = config.message_id
+        bot.edit_message_text(chat_id=chat_id, message_id=message_id, text=music)
 
         time.sleep(15)
 
